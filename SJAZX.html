@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>WebCat</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    background-image: url('your-background-image.jpg'); /* 请替换为您的背景图路径 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  h1 {
+    color: red;
+    text-align: center;
+    margin-top: 200px;
+    position: relative;
+    display: inline-block;
+  }
+  .overlay-image {
+    position: absolute;
+    top: 30%; /* 调整此值以增加图片与文字之间的距离 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* 可以根据需要调整图片大小 */
+    height: auto;
+  }
+  .bottom-image {
+    position: absolute;
+    bottom: 20px; /* 调整此值以确定图片距离页面底部的距离 */
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%; /* 可以根据需要调整图片大小 */
+    height: auto;
+  }
+  input, button {
+    display: block;
+    margin: 20px auto;
+    font-size: 20px;
+  }
+  .exit-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>请输入密码</h1>
+<img src="1709787619245.png" class="overlay-image"> <!-- 请替换为您的叠加图片路径 -->
+<input type="text" />
+<button>确认密码</button>
+<button class="exit-button" onclick="exitAndRedirect()">退出</button>
+<img src="your-bottom-image.png" class="bottom-image"> <!-- 请替换为您的底部图片路径 -->
+
+<script>
+  let button = document.querySelector("button");
+  button.onclick = function () {
+    let input = document.querySelector("input");
+    if (input.value === "61s3") {
+      document.body.innerHTML = "<h1>欢迎使用ex</h1>";
+    } else {
+      alert("密码错误请重新输入密码");
+    }
+  };
+
+  function exitAndRedirect() {
+    window.open('sjac.html', '_blank');
+    window.close();
+  }
+</script>
+</body>
+</html>
